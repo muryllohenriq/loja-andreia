@@ -94,7 +94,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export function Navbar() {
   const [open, setOpen] = useState(false)
   const [openCart, setOpenCart] = useState(false)
 
