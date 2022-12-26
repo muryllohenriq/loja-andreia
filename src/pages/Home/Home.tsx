@@ -1,12 +1,12 @@
 import { Navbar } from "../../components/Navbar/navbar"
 import { ClothingCard } from "../../components/ClothingCard/clothingCard"
-import { CarouselComponent } from "../../components/CarouselComponent/carouselComponent"
+import { Carousel } from "../../components/Carousel/carousel"
 
 function Home() {
     return (
         <>
         <Navbar/>
-        <CarouselComponent/>
+        <Carousel/>
         <ClothingCard/>
         </>
     )
