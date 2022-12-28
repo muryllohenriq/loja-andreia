@@ -32,7 +32,6 @@ const products = [
     {
       id: 1,
       name: 'Basic Tee',
-      href: '#',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
       imageAlt: "Front of men's Basic Tee in black.",
       price: '$35',
@@ -119,7 +118,7 @@ export function ClothingCard() {
                               ))}
                             </div>
                             <p className="sr-only">{product.rating} out of 5 stars</p>
-                            <a href="#" className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                            <a href="#" className="ml-3 text-sm font-medium text-violet-red hover:text-violet-red">
                               {product.reviewCount} reviews
                             </a>
                           </div>
@@ -173,7 +172,7 @@ export function ClothingCard() {
                           <div className="mt-10">
                             <div className="flex items-center justify-between">
                               <h4 className="text-sm font-medium text-gray-900">Size</h4>
-                              <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                              <a href="#" className="text-sm font-medium text-violet-red hover:text-violet-red">
                                 Size guide
                               </a>
                             </div>
@@ -191,7 +190,7 @@ export function ClothingCard() {
                                         size.inStock
                                           ? 'bg-white shadow-sm text-gray-900 cursor-pointer'
                                           : 'bg-gray-50 text-gray-200 cursor-not-allowed',
-                                        active ? 'ring-2 ring-indigo-500' : '',
+                                        active ? 'ring-2 ring-violet-red' : '',
                                         'group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1'
                                       )
                                     }
@@ -203,7 +202,7 @@ export function ClothingCard() {
                                           <span
                                             className={classNames(
                                               active ? 'border' : 'border-2',
-                                              checked ? 'border-indigo-500' : 'border-transparent',
+                                              checked ? 'border-violet-red' : 'border-transparent',
                                               'pointer-events-none absolute -inset-px rounded-md'
                                             )}
                                             aria-hidden="true"
@@ -233,7 +232,7 @@ export function ClothingCard() {
 
                           <button
                             type="submit"
-                            className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-violet-red py-3 px-8 text-base font-medium text-white hover:bg-violet-red focus:outline-none focus:ring-2 focus:ring-violet-red focus:ring-offset-2"
                           >
                             Add to bag
                           </button>
@@ -255,7 +254,7 @@ export function ClothingCard() {
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative" onClick={() => setOpen(true)}>
+            <div key={product.id} className="group relative cursor-pointer" onClick={() => setOpen(true)}>
               <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                 <img
                   src={product.imageSrc}
@@ -266,7 +265,7 @@ export function ClothingCard() {
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <a href={product.href}>
+                    <a>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </a>

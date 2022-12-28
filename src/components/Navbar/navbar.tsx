@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import logo from "../../assets/andreia-logo.png"
 
 const products = [
   {
@@ -145,7 +146,7 @@ export function Navbar() {
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'text-indigo-600 border-indigo-600' : 'text-gray-900 border-transparent',
+                              selected ? 'text-violet-red border-violet-red' : 'text-gray-900 border-transparent',
                               'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium'
                             )
                           }
@@ -204,7 +205,7 @@ export function Navbar() {
         </Dialog>
       </Transition.Root>
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+        <p className="flex h-10 items-center justify-center bg-violet-red px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Andreia Duarte Modas
         </p>
         <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -224,8 +225,8 @@ export function Navbar() {
                 <a href="#">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    className="h-16 w-auto"
+                    src={logo}
                     alt=""
                   />
                 </a>
@@ -242,7 +243,7 @@ export function Navbar() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-indigo-600 text-indigo-600'
+                                  ? 'border-violet-red text-violet-red'
                                   : 'border-transparent text-gray-700 hover:text-gray-800',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
                               )}
@@ -418,7 +419,7 @@ export function Navbar() {
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-violet-red hover:text-violet-red"
                                       >
                                         Remove
                                       </button>
@@ -441,17 +442,17 @@ export function Navbar() {
                       <div className="mt-6">
                         <a
                           href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-violet-red px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-violet-red"
                         >
                           Checkout
                         </a>
                       </div>
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>
-                          or
+                          or{` `}
                           <button
                             type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-violet-red hover:text-violet-red"
                             onClick={() => setOpenCart(false)}
                           >
                             Continue Shopping
