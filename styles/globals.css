@@ -433,6 +433,7 @@ padding: 30px 65px;
   height: 400px;
   cursor: pointer;
   transition: .3s ease-in-out;
+  object-fit: cover;
 }
 .product-detail-image:hover{
   background-color: #f02d34;

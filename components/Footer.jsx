@@ -3,7 +3,17 @@ import { AiFillInstagram, AiOutlineWhatsApp } from 'react-icons/ai';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footer-container'>
+      <p>2023 Andreia Duarte Modas All rights reserved</p>
+      <p className='icons'>
+        <a href="">
+          <AiFillInstagram />
+        </a>
+        <a href="">
+          <AiOutlineWhatsApp />
+        </a>
+      </p>
+    </div>
   )
 }
 
