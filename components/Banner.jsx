@@ -15,11 +15,11 @@ const Banner = ({ banner }) => {
 
       <div>
         <Link href={`/produto/${banner.produto}`}>
-        <button type='button'>BUTTON TEXT</button>
+        <button type='button'>{banner.textoDoBotao}</button>
         </Link>
         <div className='desc'>
           <h5>Descrição</h5>
-          <p>descrição</p>
+          <p>{banner.desc}</p>
         </div>
       </div>
     </div>

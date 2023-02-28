@@ -22,7 +22,7 @@ export default {
         title: 'Identificador',
         type: 'slug',
         options: {
-          source: 'name',
+          source: 'nome',
           maxLength: 90,
         }
       },

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { AiFillInstagram, AiOutlineWhatsApp } from 'react-icons/ai';
 
 const Footer = () => {
   return (
