@@ -134,7 +134,7 @@ width: 100%;
   background-color: #dcdcdc;
   border-radius: 15px;
   position: relative;
-  height: 500px;
+  height: 400px;
   line-height: 0.9; 
   width: 100%;
 
@@ -148,7 +148,7 @@ width: 100%;
   background-color: #F49FBC;
   color: white;
   border: none;
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -156,12 +156,12 @@ width: 100%;
 }
 
 .hero-banner-container h3{
-  font-size: 4rem;
+  font-size: 3rem;
   margin-top: 4px;
 }
 .hero-banner-container h1{
   color: white;
-  font-size: 10em;
+  font-size: 8em;
   margin-left: -20px;
   text-transform: uppercase;
 }
@@ -171,7 +171,7 @@ width: 100%;
   top: 0%;
   right:20%;
   width: 450px;
-  height: 450px;
+  height: 400px;
 }
 
 
@@ -217,7 +217,7 @@ text-align: end;
   background-color: #F49FBC;
   border-radius: 15px;
   position: relative;
-  height: 400px;
+  height: 300px;
   line-height: 1; 
   color: white;
   width: 100%;
@@ -240,7 +240,7 @@ text-align: end;
 }
 .banner-desc .left h3{
   font-weight: 900;
-  font-size: 80px;
+  font-size: 50px;
   margin-left: 25px;
 }
 .banner-desc .left p{
@@ -250,6 +250,7 @@ text-align: end;
   position: absolute;
   /* top: -35%;
   left: 8%; */
+  height: 375px;
   top: -25%;
   left: 25%;
 }
@@ -258,7 +259,7 @@ text-align: end;
 }
 .banner-desc .right h3{
   font-weight: 800;
-  font-size: 60px;
+  font-size: 40px;
 }
 .banner-desc .right p{
   font-size: 18px;
@@ -496,6 +497,7 @@ padding: 30px 65px;
 .buttons .add-to-cart{
   padding: 10px 20px;
   border: 1px solid #F49FBC ;
+  border-radius: 15px;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
@@ -511,7 +513,7 @@ padding: 30px 65px;
 }
 .buttons .buy-now{
   width: 200px;
-
+  border-radius: 15px;
   padding: 10px 20px;
   background-color: #F49FBC;
   color: white;
@@ -529,6 +531,7 @@ padding: 30px 65px;
 .quantity-desc{
   border: 1px solid gray;
 padding: 6px;
+border-radius: 15px;
 }
 .quantity-desc span{
   font-size: 16px;
