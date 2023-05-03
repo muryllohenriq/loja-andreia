@@ -31,6 +31,18 @@ export default {
         title: 'Preco',
         type: 'number',
       },
+      {
+        name: "tamanho",
+        title: "Tamanho",
+        type: "array",
+        of: [
+          {type: "PP"},
+          {type: "P"},
+          {type: "M"},
+          {type: "G"},
+          {type: "GG"}
+        ]
+      },
       { 
         name: 'detalhes',
         title: 'Detalhes',
