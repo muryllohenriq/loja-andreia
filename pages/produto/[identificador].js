@@ -37,16 +37,6 @@ const ProductDetails = ({ product, products}) => {
         
         <div className='product-detail-desc'>
           <h1>{nome}</h1>
-          <div className='reviews'>
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div>
           <h4>Detalhes: </h4>
           <p>{detalhes}</p>
           <p className='price'>R$ {preco}</p>
