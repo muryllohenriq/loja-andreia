@@ -6,7 +6,7 @@ import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products}) => {
-  const { imagem, nome, detalhes, preco } = product;
+  const { imagem, nome, detalhes, preco, tamanho } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
@@ -39,6 +39,10 @@ const ProductDetails = ({ product, products}) => {
           <h1>{nome}</h1>
           <h4>Detalhes: </h4>
           <p>{detalhes}</p>
+          <h3>Tamanhos:</h3>
+          {tamanho.map((item) => (
+            <p>{item}</p>
+          ))}
           <p className='price'>R$ {preco}</p>
           <div className='quantity'>
             <h3>Quantidade:</h3>
