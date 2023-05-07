@@ -41,7 +41,10 @@ const ProductDetails = ({ product, products}) => {
           <p>{detalhes}</p>
           <h3>Tamanhos:</h3>
           {tamanho.map((item) => (
-            <p>{item}</p>
+            <>
+            <input type='checkbox'id={`oi-${item}`}/>
+            <label htmlFor={`oi-${item}`}>{item}</label>
+            </>
           ))}
           <p className='price'>R$ {preco}</p>
           <div className='quantity'>
