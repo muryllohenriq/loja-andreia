@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body,
 * {
@@ -125,7 +129,6 @@ span.text-red {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #0A100D;
-
 }
 
 .product-card:hover {
@@ -138,6 +141,8 @@ span.text-red {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   object-fit: cover;
+  height: 200px;
+  width: 200px;
 }
 
 .product-name {
@@ -151,6 +156,7 @@ span.text-red {
 }
 
 .hero-banner-container {
+  margin-top: 30px;
   padding: 100px 40px;
   background-color: #dcdcdc;
   border-radius: 15px;
@@ -613,6 +619,10 @@ span.text-red {
   border: 1px solid gray;
   padding: 6px;
   border-radius: 15px;
+  height: 40px;
+  width: 130px;
+  display: flex;
+  align-items: center;
 }
 
 .quantity-desc span {
