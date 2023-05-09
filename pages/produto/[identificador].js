@@ -11,7 +11,7 @@ import classNames from 'classnames';
 const ProductDetails = ({ product, products }) => {
   const { imagem, nome, detalhes, preco, tamanho } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart, setSize } = useStateContext();
 
   const [selectedSize, setSelectedSize] = useState(tamanho)
 
@@ -47,21 +47,22 @@ const ProductDetails = ({ product, products }) => {
           <h3>Tamanhos:</h3>
           <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">           
             <div className="grid grid-cols-4 gap-1 sm:grid-cols-8 lg:grid-cols-4">
-              {tamanho.map((item) => (
+              {tamanho.map((size) => (
                 <RadioGroup.Option
-                  key={item}
-                  value={item}
-                  disabled={!item}
+                  key={size}
+                  value={size}                 
+                  disabled={!size}
+                  onClick={setSize(selectedSize)}                 
                   className={({ active }) =>
                     classNames(
                       active ? 'ring-2 ring-mainColor' : '',
                       'cursor-pointer bg-white text-gray-900 shadow-sm group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 w-20 h-10'
                     )
                   }
-                >
+                >                                
                   {({ active, checked }) => (
                     <>
-                      <RadioGroup.Label as="span">{item}</RadioGroup.Label>
+                      <RadioGroup.Label as="span">{size}</RadioGroup.Label>
                         <span
                           className={classNames(
                             active ? 'border' : 'border-2',
@@ -75,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
                 </RadioGroup.Option>
               ))}
             </div>
-          </RadioGroup>
+          </RadioGroup>         
           <p className='price'>R$ {preco}</p>
           <div className='quantity'>
             <h3>Quantidade:</h3>

@@ -15,7 +15,7 @@ import getStripe from "../lib/getStripe";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } =
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove, size } =
     useStateContext();
 
   const handleCheckout = async () => {
@@ -79,6 +79,7 @@ const Cart = () => {
                   <div className="flex top">
                     <h5>{item.nome}</h5>
                     <h4>R$ {item.preco}</h4>
+                    <h4>{size}</h4>
                   </div>
                   <div className="flex bottom">
                     <div>
