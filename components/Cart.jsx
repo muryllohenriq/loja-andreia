@@ -79,7 +79,7 @@ const Cart = () => {
                   <div className="flex top">
                     <h5>{item.nome}</h5>
                     <h4>R$ {item.preco}</h4>
-                    <h4>{item.sizeChose}</h4>
+                    <h4>{item.chosenSize}</h4>
                   </div>
                   <div className="flex bottom">
                     <div>

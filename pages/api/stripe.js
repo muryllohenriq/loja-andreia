@@ -25,7 +25,7 @@ export default async function handler(req, res) {
               product_data: {
                 name: item.nome,
                 images: [newImage],
-                description: item.sizeChose 
+                description: item.chosenSize 
               },
               unit_amount: item.preco * 100,
             },

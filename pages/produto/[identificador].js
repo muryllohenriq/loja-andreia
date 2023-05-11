@@ -11,11 +11,11 @@ import classNames from 'classnames';
 const ProductDetails = ({ product, products }) => {
   const { imagem, nome, detalhes, preco, tamanho } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, setShowCart, addSize } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
   const [selectedSize, setSelectedSize] = useState([])
 
   const handleBuyNow = () => {
-    onAdd(product, qty);
+    onAdd(product, qty, selectedSize);
 
     setShowCart(true);
   }
@@ -83,7 +83,7 @@ const ProductDetails = ({ product, products }) => {
             </p>
           </div>
           <div className='buttons'>
-          <button type='button' className='add-to-cart' onClick={() => [onAdd(product, qty), addSize(product, selectedSize)]}>
+          <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty, selectedSize)}>
               Adicionar ao Carrinho
             </button>
             <button type='button' className='buy-now' onClick={handleBuyNow}>

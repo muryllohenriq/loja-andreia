@@ -9,21 +9,18 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-  const [size, setSize] = useState([])
+  const [size, setSize] = useState()
 
   let foundProduct;
   let index;
 
-  const addSize = (product, sizeChose) => {
-    setSize(sizeChose) 
-    product.sizeChose = sizeChose
-    setCartItems([...cartItems, { ...product }])
-  }
-
-  const onAdd = (product, quantity) => {
+  const onAdd = (product, quantity, chosenSize) => {
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );
+
+    setSize(chosenSize) 
+    product.chosenSize = chosenSize
 
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.preco * quantity
@@ -115,8 +112,7 @@ export const StateContext = ({ children }) => {
         setTotalPrice,
         setTotalQuantities,
         setSize,
-        size,
-        addSize
+        size
       }}
     >
       {children}
