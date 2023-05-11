@@ -11,9 +11,8 @@ import classNames from 'classnames';
 const ProductDetails = ({ product, products }) => {
   const { imagem, nome, detalhes, preco, tamanho } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, setShowCart, setSize } = useStateContext();
-
-  const [selectedSize, setSelectedSize] = useState(tamanho)
+  const { decQty, incQty, qty, onAdd, setShowCart, addSize } = useStateContext();
+  const [selectedSize, setSelectedSize] = useState([])
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -47,12 +46,11 @@ const ProductDetails = ({ product, products }) => {
           <h3>Tamanhos:</h3>
           <RadioGroup value={selectedSize} onChange={setSelectedSize} className="mt-4">           
             <div className="grid grid-cols-4 gap-1 sm:grid-cols-8 lg:grid-cols-4">
-              {tamanho.map((size) => (
+              {tamanho.map((item) => (
                 <RadioGroup.Option
-                  key={size}
-                  value={size}                 
-                  disabled={!size}
-                  onClick={setSize(selectedSize)}                 
+                  key={item}
+                  value={item}                 
+                  disabled={!item}               
                   className={({ active }) =>
                     classNames(
                       active ? 'ring-2 ring-mainColor' : '',
@@ -60,14 +58,12 @@ const ProductDetails = ({ product, products }) => {
                     )
                   }
                 >                                
-                  {({ active, checked }) => (
+                  {({ active }) => (
                     <>
-                      <RadioGroup.Label as="span">{size}</RadioGroup.Label>
+                      <RadioGroup.Label as="span">{item}</RadioGroup.Label>
                         <span
                           className={classNames(
-                            active ? 'border' : 'border-2',
-                            checked ? 'border-mainColor' : 'border-gray-200',
-                            'pointer-events-none absolute -inset-px rounded-md'
+                            active ? 'border-mainColor' : 'border-gray-200 rounded-md',
                           )}
                           aria-hidden="true"
                         />
@@ -87,7 +83,7 @@ const ProductDetails = ({ product, products }) => {
             </p>
           </div>
           <div className='buttons'>
-            <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty)}>
+          <button type='button' className='add-to-cart' onClick={() => [onAdd(product, qty), addSize(product, selectedSize)]}>
               Adicionar ao Carrinho
             </button>
             <button type='button' className='buy-now' onClick={handleBuyNow}>

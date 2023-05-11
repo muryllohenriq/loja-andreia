@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 
 const Context = createContext();
@@ -9,10 +9,16 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-  const [size, setSize] = useState()
+  const [size, setSize] = useState([])
 
   let foundProduct;
   let index;
+
+  const addSize = (product, sizeChose) => {
+    setSize(sizeChose) 
+    product.sizeChose = sizeChose
+    setCartItems([...cartItems, { ...product }])
+  }
 
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find(
@@ -109,7 +115,8 @@ export const StateContext = ({ children }) => {
         setTotalPrice,
         setTotalQuantities,
         setSize,
-        size
+        size,
+        addSize
       }}
     >
       {children}
