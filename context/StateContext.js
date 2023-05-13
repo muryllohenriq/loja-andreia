@@ -9,23 +9,25 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-  const [size, setSize] = useState()
+  const [size, setSize] = useState([])
 
   let foundProduct;
   let index;
 
   const onAdd = (product, quantity, chosenSize) => {
     const checkProductInCart = cartItems.find(
-      (item) => item._id === product._id
+      (item) => item._id === product._id && item.chosenSize === size
     );
 
-    setSize(chosenSize) 
     product.chosenSize = chosenSize
 
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.preco * quantity
     );
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
+
+    setQty(1)
+    setSize([])
 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
