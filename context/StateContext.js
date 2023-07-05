@@ -20,6 +20,7 @@ export const StateContext = ({ children }) => {
       setQty(1)
     } else {
       product.chosenSize = chosenSize
+      product.newId = product._id + product.chosenSize
 
       const checkProductInCart = cartItems.find(
         (item) => item._id === product._id && item.chosenSize === size
@@ -57,8 +58,8 @@ export const StateContext = ({ children }) => {
   };
 
   const onRemove = (product) => {
-    foundProduct = cartItems.find((item) => item._id === product._id);
-    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+    foundProduct = cartItems.find((item) => item.newId === product.newId);
+    const newCartItems = cartItems.filter((item) => item.newId !== product.newId);
 
     setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.preco * foundProduct.quantity);
     setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);
