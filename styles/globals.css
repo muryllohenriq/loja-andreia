@@ -456,9 +456,9 @@ span.text-red {
   position: absolute;
   bottom: 12px;
   right: 5px;
-  width: 100%;
-  padding: 30px 65px;
-
+  width: 98%;
+  padding: 5px 35px;
+  background-color: white;
 }
 
 .btn-container {

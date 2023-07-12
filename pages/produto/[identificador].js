@@ -19,6 +19,8 @@ const ProductDetails = ({ product, products }) => {
     setShowCart(true);
   }
 
+  console.log(size);
+
   return (
     <div>
       <div className='product-detail-container'>
