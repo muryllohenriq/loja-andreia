@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 import { client, urlFor } from '../../lib/client';
@@ -18,6 +18,10 @@ const ProductDetails = ({ product, products }) => {
 
     setShowCart(true);
   }
+
+  useEffect(() => {
+    setSize([])
+  }, [`/${product.detalhes}`])
 
   return (
     <div>
