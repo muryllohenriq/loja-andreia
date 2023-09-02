@@ -9,7 +9,7 @@ import { RadioGroup } from '@headlessui/react'
 import classNames from 'classnames';
 
 const ProductDetails = ({ product, products }) => {
-  const { imagem, nome, detalhes, preco, tamanho } = product;
+  const { imagem, nome, detalhes, preco, tamanho, parcelas } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart, size, setSize } = useStateContext();
 
@@ -76,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
               ))}
             </div>
           </RadioGroup>         
-          <p className='price'>R$ {preco}</p>
+          <p className='price'>{parcelas} x R$ {preco}</p>
           <div className='quantity'>
             <h3>Quantidade:</h3>
             <p className='quantity-desc'>
