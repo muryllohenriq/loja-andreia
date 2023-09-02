@@ -29,7 +29,7 @@ export default {
     {
       name: 'parcelas',
       title: 'Parcelas',
-      type: 'number'
+      type: 'number',
     },
     {
       name: 'preco',
